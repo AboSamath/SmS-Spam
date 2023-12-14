@@ -6,7 +6,7 @@ import numpy as np
 
 
 
-from utils import background, Nettoyage, predict_spam
+from utils import background, predict_spam
 
 
 background('./Images/spam.jpg')
