@@ -20,6 +20,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.corpus import stopwords
 from sklearn.model_selection import train_test_split
 import joblib
+nltk.download('punkt')
 
 
 def background(image_file):
