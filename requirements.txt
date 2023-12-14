@@ -1,0 +1,11 @@
+streamlit
+keras
+PILLOW
+numpy
+matplotlib
+tensorflow
+bs4
+BeautifulSoup4
+requests
+nltk
+sumy
