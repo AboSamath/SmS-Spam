@@ -9,7 +9,7 @@ import numpy as np
 from utils import background, Nettoyage, predict_spam
 
 
-background('./back.jpg')
+background('./Images/spam.jpg')
 
 st.markdown('<h1 style="background-color: white; color: #f4672f; border: 8px solid #f4672f; padding: 15px; text-align: center">SMS Spam Detection</h1>', unsafe_allow_html=True)
 
