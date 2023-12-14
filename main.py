@@ -25,7 +25,7 @@ loaded_rf = joblib.load("./Models/Random_Forest.joblib")
 
 st.markdown("")
 
-st.markdown('<h5 style="background-color: white; color: #000080; border: 8px solid #000080; text-align: center">Please Input an SMS example. </h5>', unsafe_allow_html=True)
+st.markdown('<h5 style="background-color: white; color: #000080; padding: 10px; text-align: center">Please Input an SMS example. </h5>', unsafe_allow_html=True)
 
 texte_utilisateur = st.text_area(" ")
 
