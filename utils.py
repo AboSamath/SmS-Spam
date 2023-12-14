@@ -46,7 +46,7 @@ parser = PlaintextParser.from_string(sample_message, Tokenizer('english'))
 loaded_rf = joblib.load("./Models/Random_Forest.joblib")
 
 #Cargement du transformateur
-load_tfid = joblib.load("./tfid_transformer.pkl")
+load_tfid = joblib.load("./tfid_transformer.joblib")
 
 wnl = WordNetLemmatizer()
 
