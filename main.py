@@ -10,13 +10,13 @@ from utils import background, predict_spam
 
 background('./Images/spam3.jpg')
 
-st.markdown('<h1 style="background-color: white; color: #000000; border: 8px solid #4d0000; padding: 15px; text-align: center">SMS Spam Detection</h1>', unsafe_allow_html=True)
+st.markdown('<h1 style="background-color: white; color: #000000; border: 8px solid #990000; padding: 15px; text-align: center">SMS Spam Detection</h1>', unsafe_allow_html=True)
 
 st.markdown("")
 
 st.markdown("")
 
-st.markdown('<h5 style="background-color: white; color: #000000; border: 8px solid #4d0000; padding: 10px; text-align: center">This application is designed detects/classifies a SMS into SPAM or HAM (normal) based on the textual data using Natural Language Processing. </h5>', unsafe_allow_html=True)
+st.markdown('<h5 style="background-color: white; color: #000000; border: 3px solid #990000; padding: 10px; text-align: center">This application is designed detects/classifies a SMS into SPAM or HAM (normal) based on the textual data using Natural Language Processing. </h5>', unsafe_allow_html=True)
 
 
 st.markdown("")
