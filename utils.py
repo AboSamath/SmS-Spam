@@ -22,7 +22,6 @@ import joblib
 
 
 
-
 def background(image_file):
     with open(image_file, "rb") as f:
         img_data = f.read()
@@ -65,7 +64,8 @@ def predict_spam(sample_message):
 
   temp = load_tfid.fit_transform([final_message]).toarray()
   feature_names = load_tfid.get_feature_names_out()
-  prediction = loaded_rf.predict(temp)
+  prediction_rf = loaded_rf.predict(temp)
+  prediction = prediction_rf.toarray()
 
   return prediction[0]
 
