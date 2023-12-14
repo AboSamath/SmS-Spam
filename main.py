@@ -17,7 +17,7 @@ st.markdown("")
 
 st.markdown("")
 
-st.markdown(' <h3>This application is designed detects/classifies a SMS into SPAM or HAM (normal) based on the textual data using Natural Language Processing. </h3>')
+st.markdown('<h3 style="background-color: white; color: #000080; border: 8px solid #000080; padding: 15px; text-align: center">This application is designed detects/classifies a SMS into SPAM or HAM (normal) based on the textual data using Natural Language Processing. </h3>', unsafe_allow_html=True)
 
 resultat = ""
 
