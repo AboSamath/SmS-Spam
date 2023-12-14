@@ -9,5 +9,4 @@ BeautifulSoup4
 requests
 nltk
 sumy
-sklearn
 scikit-learn
