@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 import base64
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 import numpy as np
 
 
