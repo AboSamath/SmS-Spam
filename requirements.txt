@@ -10,3 +10,4 @@ requests
 nltk
 sumy
 sklearn
+scikit-learn
