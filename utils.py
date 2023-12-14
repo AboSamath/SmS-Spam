@@ -21,7 +21,7 @@ from nltk.corpus import stopwords
 from sklearn.model_selection import train_test_split
 import joblib
 nltk.download('punkt')
-
+nltk.download('stopwords')
 
 def background(image_file):
     with open(image_file, "rb") as f:
