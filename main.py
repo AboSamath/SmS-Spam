@@ -23,16 +23,27 @@ resultat = ""
 #Chargement du modèle
 loaded_rf = joblib.load("./Models/Random_Forest.joblib")
 
+#Cargement du transformateur
+load_tfid = joblib.load("./tfid_transformer.pkl")
+
 st.markdown("")
 
 st.markdown('<h5 style="background-color: white; color: #000080; padding: 10px; text-align: center">Please Input an SMS example. </h5>', unsafe_allow_html=True)
 
 texte_utilisateur = st.text_area(" ")
 
-if st.button("SPAM Detection"):
+# Appliquer la transformation TF-IDF sur le message de l'utilisateur
+texte_utilisateur_vectorized = load_tfid.transform([texte_utilisateur])
+
+""" if st.button("SPAM Detection"):
     if predict_spam(texte_utilisateur) :
         print("This is a SPAM Message, Be Careful !")
     else:
-        print("This is a normal message")
+        print("This is a normal message") """
 
-
+if st.button("SPAM CHECKER"):
+    prediction = predict_spam(texte_utilisateur_vectorized)
+    if prediction == 1:
+        st.error("Spam détecté!")
+    else:
+        st.success("Non Spam (Ham)!")

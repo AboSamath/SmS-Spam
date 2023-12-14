@@ -18,6 +18,8 @@ from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.corpus import stopwords
 from sklearn.model_selection import train_test_split
+import joblib
+
 
 
 
@@ -38,19 +40,14 @@ def background(image_file):
 
 sample_message = ""
 
-X = ""
-y = ""
-
 # Créer un text parser utilisant de tokenisation
 parser = PlaintextParser.from_string(sample_message, Tokenizer('english'))
 
-X_train, X_test, y_train, y_test = train_test_split(X, y,test_size=0.25, random_state=42)
+#Chargement du modèle
+loaded_rf = joblib.load("./Models/Random_Forest.joblib")
 
-rf = RandomForestClassifier(n_estimators=10)
-
-tfidf = TfidfVectorizer(max_features=500)
-
-rf.fit(X_train, y_train)
+#Cargement du transformateur
+load_tfid = joblib.load("./tfid_transformer.pkl")
 
 wnl = WordNetLemmatizer()
 
@@ -58,6 +55,7 @@ corpus = []
 
 
 def predict_spam(sample_message):
+  
   sample_message = re.sub(pattern='[^a-zA-Z]',repl=' ', string = sample_message)
   sample_message = sample_message.lower()
   sample_message_words = sample_message.split()
@@ -65,9 +63,11 @@ def predict_spam(sample_message):
   final_message = [wnl.lemmatize(word) for word in sample_message_words]
   final_message = ' '.join(final_message)
 
-  temp = tfidf.fit_transform([final_message]).toarray()
-  feature_names = tfidf.get_feature_names_out()
-  return rf.predict(temp)
+  temp = load_tfid.fit_transform([final_message]).toarray()
+  feature_names = load_tfid.get_feature_names_out()
+  prediction = loaded_rf.predict(temp)
+
+  return prediction[0]
 
 
 
