@@ -9,3 +9,4 @@ BeautifulSoup4
 requests
 nltk
 sumy
+sklearn
