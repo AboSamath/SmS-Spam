@@ -6,7 +6,7 @@ import numpy as np
 
 
 
-from utils import background
+from utils import background, Nettoyage, predict_spam
 
 
 background('./back.jpg')
@@ -27,5 +27,11 @@ model = load_model('Models/Random_Forest.joblib', compile = False)
 st.markdown('#### Please input your SMS !')
 
 texte_utilisateur = st.text_area(" ")
+
+if st.button("SPAM Detection"):
+    if predict_spam(texte_utilisateur) :
+        print("This is a SPAM Message, Be Careful !")
+    else:
+        print("This is a normal message")
 
 
