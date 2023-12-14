@@ -38,20 +38,24 @@ def background(image_file):
 
 sample_message = ""
 
+X = ""
+y = ""
+
 # Créer un text parser utilisant de tokenisation
 parser = PlaintextParser.from_string(sample_message, Tokenizer('english'))
 
+X_train, X_test, y_train, y_test = train_test_split(X, y,test_size=0.25, random_state=42)
+
+rf = RandomForestClassifier(n_estimators=10)
 
 tfidf = TfidfVectorizer(max_features=500)
+
+rf.fit(X_train, y_train)
 
 wnl = WordNetLemmatizer()
 
 corpus = []
 
-def FitModel(X, y):
-   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-   rf = RandomForestClassifier(n_estimators=10)
-   return rf.fit(X_train, y_train)
 
 def predict_spam(sample_message):
   sample_message = re.sub(pattern='[^a-zA-Z]',repl=' ', string = sample_message)
