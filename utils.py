@@ -1,6 +1,7 @@
 import base64
 import streamlit as st
 from PIL import ImageOps, Image
+from sklearn import *
 import os
 import numpy as np
 import matplotlib.pyplot as plt
@@ -62,10 +63,9 @@ def predict_spam(sample_message):
   final_message = [wnl.lemmatize(word) for word in sample_message_words]
   final_message = ' '.join(final_message)
 
-  temp = load_tfid.fit_transform([final_message]).toarray()
+  temp = load_tfid.transform([final_message]).toarray()
   feature_names = load_tfid.get_feature_names_out()
-  prediction_rf = loaded_rf.predict(temp)
-  prediction = prediction_rf.toarray()
+  prediction = loaded_rf.predict(temp)
 
   return prediction[0]
 
