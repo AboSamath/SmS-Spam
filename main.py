@@ -1,6 +1,9 @@
 import streamlit as st
 from PIL import Image
 import base64
+from tensorflow.keras.models import load_model
+import numpy as np
+
 
 
 from utils import background
@@ -16,9 +19,13 @@ st.markdown("")
 
 st.markdown("This application is designed detects/classifies a SMS into SPAM or HAM (normal) based on the textual data using Natural Language Processing.")
 
+resultat = ""
+
+#Chargement du modèle
+model = load_model('Models/Random_Forest.joblib', compile = False)
+
 st.markdown('#### Please input your SMS !')
 
 texte_utilisateur = st.text_area(" ")
 
-resultat = ""
 
