@@ -20,8 +20,6 @@ from nltk.corpus import stopwords
 
 
 
-
-
 def background(image_file):
     with open(image_file, "rb") as f:
         img_data = f.read()
@@ -47,33 +45,6 @@ tfidf = TfidfVectorizer(max_features=500)
 wnl = WordNetLemmatizer()
 corpus = []
 
-def Nettoyage(sample_message):
-   
-   for sms_string in list(sample_message):
-
-    # Nettoyage des caractères spéciaux
-    sample_message = re.sub(pattern='[^a-zA-Z]', repl=' ', string=sms_string)
-
-    # Convertion des caractères en miniscule
-    sample_message = sample_message.lower()
-
-    # Tokenisation en mot
-    words = sample_message.split()
-
-    # Suppression des mots vides
-    filtered_words = [word for word in words if word not in set(stopwords.words('english'))]
-
-    # Lemmatisation des mots
-    lemmatized_words = [wnl.lemmatize(word) for word in filtered_words]
-
-    # Jointure des mots lemmatisés
-    sample_message = ' '.join(lemmatized_words)
-
-    # Construction d'un corpus de messages
-    corpus.append(sample_message)
-    
-
-   return sample_message
 
 def predict_spam(sample_message):
   sample_message = re.sub(pattern='[^a-zA-Z]',repl=' ', string = sample_message)
