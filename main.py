@@ -16,12 +16,14 @@ st.markdown("")
 
 st.markdown("")
 
-st.markdown('<h5 style="background-color: white; color: #40E0D0; border: 8px solid #40E0D0; padding: 15px; text-align: center">This application is designed detects/classifies a SMS into SPAM or HAM (normal) based on the textual data using Natural Language Processing. </h5>', unsafe_allow_html=True)
+st.markdown('<h5 style="background-color: white; color: #40E0D0; border: 8px solid #000080; padding: 10px; text-align: center">This application is designed detects/classifies a SMS into SPAM or HAM (normal) based on the textual data using Natural Language Processing. </h5>', unsafe_allow_html=True)
 
 resultat = ""
 
 #Chargement du modèle
 loaded_rf = joblib.load("./Models/Random_Forest.joblib")
+
+st.markdown("")
 
 st.markdown('#### Please input your SMS !')
 

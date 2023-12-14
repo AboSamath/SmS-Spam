@@ -42,6 +42,7 @@ parser = PlaintextParser.from_string(sample_message, Tokenizer('english'))
 
 rf = RandomForestClassifier(n_estimators=10)
 tfidf = TfidfVectorizer(max_features=500)
+
 wnl = WordNetLemmatizer()
 corpus = []
 
@@ -54,7 +55,8 @@ def predict_spam(sample_message):
   final_message = [wnl.lemmatize(word) for word in sample_message_words]
   final_message = ' '.join(final_message)
 
-  temp = tfidf.transform([final_message]).toarray()
+  temp = tfidf.fit_transform_transform([final_message]).toarray()
+  feature_names = tfidf.get_feature_names_out()
   return rf.predict(temp)
 
 
