@@ -55,7 +55,7 @@ def predict_spam(sample_message):
   final_message = [wnl.lemmatize(word) for word in sample_message_words]
   final_message = ' '.join(final_message)
 
-  temp = tfidf.fit_transform_transform([final_message]).toarray()
+  temp = tfidf.fit_transform([final_message]).toarray()
   feature_names = tfidf.get_feature_names_out()
   return rf.predict(temp)
 
