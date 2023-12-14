@@ -29,6 +29,6 @@ texte_utilisateur = st.text_area(" ")
 if st.button("SPAM CHECKER"):
     prediction = predict_spam(texte_utilisateur)
     if prediction == 1:
-        st.error("Spam detected! Becareful !")
+        st.error("Spam detected! Be careful !")
     else:
         st.success("Non Spam (Ham) Safe Message !")
