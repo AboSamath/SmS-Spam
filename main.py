@@ -21,7 +21,7 @@ st.markdown('<h6 style="background-color: white; color: #000000; border: 3px sol
 
 st.markdown("")
 
-st.markdown('<h5 style="background-color: white; color: #000080; padding: 10px; text-align: center">Please Input a SMS example. </h5>', unsafe_allow_html=True)
+st.markdown('<h6 style="background-color: white; color: #000080; padding: 10px; text-align: center">Please Input a SMS example. </h6>', unsafe_allow_html=True)
 
 texte_utilisateur = st.text_area(" ")
 
