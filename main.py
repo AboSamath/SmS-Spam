@@ -10,7 +10,7 @@ from utils import background, predict_spam
 
 background('./Images/spam3.jpg')
 
-st.markdown('<h1 style="background-color: white; color: #000000; border: 8px solid #990000; padding: 15px; text-align: center">SMS Spam Detection</h1>', unsafe_allow_html=True)
+st.markdown('<h1 style="background-color: white; color: #000000; border: 15px solid #990000; padding: 25px; text-align: center">SMS Spam Detection</h1>', unsafe_allow_html=True)
 
 st.markdown("")
 
